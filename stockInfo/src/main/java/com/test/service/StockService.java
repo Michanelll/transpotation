@@ -15,4 +15,5 @@ public interface StockService {
     String getWeekKlineInfo(int market,String code) throws IOException;
     String getMonthKlineInfo(int market,String code) throws IOException;
     String getTrends(int market,String code,int day) throws IOException;
+    String getFreshPrice(int market,String code) throws IOException;
 }

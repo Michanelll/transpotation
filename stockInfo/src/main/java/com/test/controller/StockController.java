@@ -42,4 +42,8 @@ public class StockController {
     @ApiOperation("获取股票实时数据，第三位参数指请求几日内的，最大5日内")
     @RequestMapping(value = "/trends/{market}/{code}/{day}",method = RequestMethod.GET)
     public String getTrends(@PathVariable("market")int market,@PathVariable("code") String code,@PathVariable("day") int day) throws IOException {return service.getTrends(market, code, day);}
+
+    @ApiOperation("获取股票最新价格")
+    @RequestMapping(value = "/trends/{market}/{code}",method = RequestMethod.GET)
+    public String getTrends(@PathVariable("market")int market,@PathVariable("code") String code) throws IOException {return service.getFreshPrice(market,code);}
 }

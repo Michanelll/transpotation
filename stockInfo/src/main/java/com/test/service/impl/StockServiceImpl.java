@@ -107,6 +107,17 @@ public class StockServiceImpl implements StockService {
         return bigObject.toString();
     }
 
+    @Override
+    public String getFreshPrice(int market, String code) throws IOException {
+        String object=getTrends(market,code,1);
+        JSONObject jsonObject=new JSONObject(object);
+        JSONArray jsonArray=jsonObject.getJSONArray("trends");
+        List list = jsonArray.toList();
+        jsonObject=jsonArray.getJSONObject(list.size()-1);
+        return jsonObject.get("price").toString();
+
+    }
+
     private String simplifyJson(JSONObject jsonObject) {
         JSONObject mydata = jsonObject.getJSONObject("data");
         JSONObject bigObject = new JSONObject().put("name",mydata.get("name"));
