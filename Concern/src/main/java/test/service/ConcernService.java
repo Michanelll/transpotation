@@ -11,5 +11,5 @@ import java.util.List;
  */
 public interface ConcernService {
     int addStock(Stock stock);
-    List getStocksByUid(int uid);
+    String getStocksByUid(int uid);
 }

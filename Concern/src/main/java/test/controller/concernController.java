@@ -19,7 +19,7 @@ public class concernController {
     @Resource
     ConcernService service;
     @RequestMapping(value = "/concern",method = RequestMethod.GET)
-    public List getStockInfo() throws IOException {return service.getStocksByUid(1);}
+    public String getStockInfo() throws IOException {return service.getStocksByUid(1);}
 
     @RequestMapping(value = "/concern/post",method = RequestMethod.POST)
     public int post( @RequestBody Stock stock){
