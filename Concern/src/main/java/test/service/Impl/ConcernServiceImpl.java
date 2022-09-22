@@ -44,4 +44,9 @@ public class ConcernServiceImpl implements ConcernService {
         }
         return jsonArray.toString();
     }
+
+    @Override
+    public int deleteStock(int uid, String code) {
+        return mapper.deleteStock(uid, code);
+    }
 }
